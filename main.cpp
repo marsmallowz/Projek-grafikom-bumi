@@ -20,6 +20,8 @@
 // function prototypes
 //-----------------------------------------------------------------------------
 void idleFunc( );
+static int year1=0, day1=0, year2=0, day2=0;
+void displayFunc1( );
 void displayFunc( );
 void reshapeFunc( GLsizei width, GLsizei height );
 void keyboardFunc( unsigned char, int, int );
@@ -221,6 +223,8 @@ void idleFunc( )
 void displayFunc( )
 {
     static GLfloat x = 0.0f;
+    static GLfloat y = 0.0f;
+    static GLfloat b = 0.0f;
 
     // clear the color and depth buffers
     glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
@@ -241,13 +245,157 @@ void displayFunc( )
         // rotate the planet
         glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
         glRotatef( x, 0.0f, 0.0f, 1.0f );
-        x += .01f;
+        x += .4f;
+
+
 
         // draw the sphere
         glColor3f( 1.0f, 1.0f, 1.0f );
         gluSphere( g_sphere, 1.28f, 24, 24 );
 
+        glColor3f( 1.0f, 1.0f, 1.0f );
+        gluSphere( g_sphere, 1.28f, 24, 24 );
+
+
     glPopMatrix( );
+
+    glPushMatrix();
+ glRotatef(y ,0.0,1.0,1.0);
+ glTranslatef(2.0,0.0,0.0);
+ glRotatef(y,0.0,1.0,0.0);
+ y -= .4f;
+ glutSolidSphere(0.2,10,8);
+ glPopMatrix();
+
+ glPushMatrix();
+glTranslatef(0.0,-2.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat)b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0.0,2.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat)b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0.0,-4.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat)b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0.0,4.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.1,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0.0,-6.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.1,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(0.0,6.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.1,20,8);
+glPopMatrix();
+
+
+glPushMatrix();
+glTranslatef(0.0,-8.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.1,20,8);
+glPopMatrix();
+
+
+
+
+glPushMatrix();
+glTranslatef(0.0,8.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.1,20,8);
+glPopMatrix();
+
+
+glPushMatrix();
+glTranslatef(8.0,0.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+glPushMatrix();
+glTranslatef(-8.0,-2.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(6.0,4.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-6.0,4.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(5.0,-4.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
+
+glPushMatrix();
+glTranslatef(-7.0,3.0,0.0);
+gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+glRotatef((GLfloat) b,0.0,0.0,0.0);
+glScalef(200.0,0.0,0.0);
+glColor3f(4.3,3.5,1.0);
+glutSolidSphere(0.04,20,8);
+glPopMatrix();
 
     if( g_img )
         glDisable( GL_TEXTURE_2D );
@@ -323,17 +471,17 @@ void mouseFunc( int button, int state, int x, int y )
     {
         // when left mouse button is down, move left
         if( state == GLUT_DOWN )
-            g_inc -= 0.1f;
+            g_inc -= 0.8f;
         else
-            g_inc += 0.1f;
+            g_inc += 0.8f;
     }
     else if ( button == GLUT_RIGHT_BUTTON )
     {
         // when right mouse button down, move right
         if( state == GLUT_DOWN )
-            g_inc += .1f;
+            g_inc += .8f;
         else
-            g_inc -= .1f;
+            g_inc -= .8f;
     }
     else
     {
