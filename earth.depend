@@ -8,7 +8,7 @@
 	<stdio.h>
 	<string.h>
 
-983676786 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
+1574718804 c:\program files (x86)\codeblocks\mingw\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
@@ -239,4 +239,13 @@
 1341006780 c:\program files (x86)\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
+
+1574758230 source:c:\kuliah\grafikom\projek-grafikom-bumi\main.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
 

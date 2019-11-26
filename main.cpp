@@ -223,6 +223,7 @@ void idleFunc( )
 void displayFunc( )
 {
     static GLfloat x = 0.0f;
+    static GLfloat z = 0.0f;
     static GLfloat y = 0.0f;
     static GLfloat b = 0.0f;
 
@@ -236,43 +237,59 @@ void displayFunc( )
     }
 
     // save the current matrix
-    glPushMatrix( );
+    glColor3f(1.5f, 0.7f, 0.0f );
+        glPushMatrix( );
 
         // rotate the view point
         glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
         g_angle_x += g_inc;
 
         // rotate the planet
+
         glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
         glRotatef( x, 0.0f, 0.0f, 1.0f );
         x += .4f;
 
+        // draw the sphere
+
+        glutSolidSphere(1.28f, 24, 24 );
+        glColor3f( 1.0f, 1.0f, 1.0f );
+       glPushMatrix( );
+
+        // rotate the view point
+        glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
+
+        g_angle_x += g_inc;
+
+        // rotate the planet
+        glTranslatef(3.0,0.0,0.0);
+        glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
+        glRotatef( z, 0.0f, 1.0f, 0.0f );
+        z -= 1.0f;
 
 
         // draw the sphere
-        glColor3f( 1.0f, 1.0f, 1.0f );
-        gluSphere( g_sphere, 1.28f, 24, 24 );
 
-        glColor3f( 1.0f, 1.0f, 1.0f );
-        gluSphere( g_sphere, 1.28f, 24, 24 );
+        gluSphere( g_sphere, 0.68f, 12, 12 );
+glColor3f(1.0f, 0.7f, 0.7f);
+ glPushMatrix( );
+ glRotatef(y ,0.0,1.0,1.0);
+ glTranslatef(1.0,0.0,0.0);
+ glRotatef(y,0.0,1.0,0.0);
+ y -= 5.0f;
+ glutSolidSphere(0.2,10,8);
+glPopMatrix( );
+glPopMatrix( );
 
 
     glPopMatrix( );
-
-    glPushMatrix();
- glRotatef(y ,0.0,1.0,1.0);
- glTranslatef(2.0,0.0,0.0);
- glRotatef(y,0.0,1.0,0.0);
- y -= .4f;
- glutSolidSphere(0.2,10,8);
- glPopMatrix();
 
  glPushMatrix();
 glTranslatef(0.0,-2.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat)b,0.0,0.0,0.0);
 glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
 
@@ -281,7 +298,7 @@ glTranslatef(0.0,2.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat)b,0.0,0.0,0.0);
 glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
 
@@ -290,7 +307,7 @@ glTranslatef(0.0,-4.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat)b,0.0,0.0,0.0);
 glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
 
@@ -299,7 +316,7 @@ glTranslatef(0.0,4.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
 glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.1,20,8);
 glPopMatrix();
 
@@ -308,7 +325,7 @@ glTranslatef(0.0,-6.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
 glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.1,20,8);
 glPopMatrix();
 
@@ -316,8 +333,8 @@ glPushMatrix();
 glTranslatef(0.0,6.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
+glScalef(500.0,0.0,0.0);
+glColor3f(1.0,1.0,1.0);
 glutSolidSphere(0.1,20,8);
 glPopMatrix();
 
@@ -326,7 +343,7 @@ glPushMatrix();
 glTranslatef(0.0,-8.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.1,20,8);
 glPopMatrix();
@@ -338,7 +355,7 @@ glPushMatrix();
 glTranslatef(0.0,8.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.1,20,8);
 glPopMatrix();
@@ -348,7 +365,7 @@ glPushMatrix();
 glTranslatef(8.0,0.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
@@ -356,7 +373,7 @@ glPushMatrix();
 glTranslatef(-8.0,-2.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
@@ -365,7 +382,7 @@ glPushMatrix();
 glTranslatef(6.0,4.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
@@ -374,7 +391,7 @@ glPushMatrix();
 glTranslatef(-6.0,4.0,0.0);
 gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
 glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
+glScalef(500.0,0.0,0.0);
 glColor3f(4.3,3.5,1.0);
 glutSolidSphere(0.04,20,8);
 glPopMatrix();
