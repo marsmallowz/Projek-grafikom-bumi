@@ -190,7 +190,7 @@ void initialize()
         GL_RGBA,
         GL_UNSIGNED_BYTE,
         g_imgData.bits
-        );
+    );
 
     printf( "----------------------------------------------------\n" );
     printf( "Texture mapping sample in OpenGL\n" );
@@ -238,181 +238,181 @@ void displayFunc( )
 
     // save the current matrix
     glColor3f(1.5f, 0.7f, 0.0f );
-        glPushMatrix( );
+    glPushMatrix( );
 
-        // rotate the view point
-        glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
-        g_angle_x += g_inc;
+    // rotate the view point
+    glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
+    g_angle_x += g_inc;
 
-        // rotate the planet
+    // rotate the planet
 
-        glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
-        glRotatef( x, 0.0f, 0.0f, 1.0f );
-        x += .4f;
+    glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
+    glRotatef( x, 0.0f, 0.0f, 1.0f );
+    x += .4f;
 
-        // draw the sphere
+    // draw the sphere
 
-        glutSolidSphere(1.28f, 24, 24 );
-        glColor3f( 1.0f, 1.0f, 1.0f );
-       glPushMatrix( );
+    glutSolidSphere(1.28f, 24, 24 );
+    glColor3f( 1.0f, 1.0f, 1.0f );
+    glPushMatrix( );
 
-        // rotate the view point
-        glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
+    // rotate the view point
+    glRotatef( g_angle_x, 1.0f, 0.0f, 0.0f );
 
-        g_angle_x += g_inc;
+    g_angle_x += g_inc;
 
-        // rotate the planet
-        glTranslatef(3.0,0.0,0.0);
-        glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
-        glRotatef( z, 0.0f, 1.0f, 0.0f );
-        z -= 1.0f;
+    // rotate the planet
+    glTranslatef(3.0,0.0,0.0);
+    glRotatef( -90.0f, 1.0f, 0.0f, 0.0f );
+    glRotatef( z, 0.0f, 1.0f, 0.0f );
+    z -= 1.0f;
 
 
-        // draw the sphere
+    // draw the sphere
 
-        gluSphere( g_sphere, 0.68f, 12, 12 );
-glColor3f(1.0f, 0.7f, 0.7f);
- glPushMatrix( );
- glRotatef(y ,0.0,1.0,1.0);
- glTranslatef(1.0,0.0,0.0);
- glRotatef(y,0.0,1.0,0.0);
- y -= 5.0f;
- glutSolidSphere(0.2,10,8);
-glPopMatrix( );
-glPopMatrix( );
+    gluSphere( g_sphere, 0.68f, 12, 12 );
+    glColor3f(1.0f, 0.7f, 0.7f);
+    glPushMatrix( );
+    glRotatef(y,0.0,1.0,1.0);
+    glTranslatef(1.0,0.0,0.0);
+    glRotatef(y,0.0,1.0,0.0);
+    y -= 5.0f;
+    glutSolidSphere(0.2,10,8);
+    glPopMatrix( );
+    glPopMatrix( );
 
 
     glPopMatrix( );
 
- glPushMatrix();
-glTranslatef(0.0,-2.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat)b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,-2.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat)b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(0.0,2.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat)b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,2.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat)b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(0.0,-4.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat)b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,-4.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat)b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(0.0,4.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.1,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,4.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.1,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(0.0,-6.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.1,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,-6.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.1,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(0.0,6.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(1.0,1.0,1.0);
-glutSolidSphere(0.1,20,8);
-glPopMatrix();
-
-
-glPushMatrix();
-glTranslatef(0.0,-8.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.1,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,6.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(1.0,1.0,1.0);
+    glutSolidSphere(0.1,20,8);
+    glPopMatrix();
 
 
+    glPushMatrix();
+    glTranslatef(0.0,-8.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.1,20,8);
+    glPopMatrix();
 
 
-glPushMatrix();
-glTranslatef(0.0,8.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.1,20,8);
-glPopMatrix();
 
 
-glPushMatrix();
-glTranslatef(8.0,0.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
-glPushMatrix();
-glTranslatef(-8.0,-2.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0.0,8.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.1,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(6.0,4.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
 
-glPushMatrix();
-glTranslatef(-6.0,4.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(500.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(8.0,0.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-8.0,-2.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(5.0,-4.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(6.0,4.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
-glPushMatrix();
-glTranslatef(-7.0,3.0,0.0);
-gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
-glRotatef((GLfloat) b,0.0,0.0,0.0);
-glScalef(200.0,0.0,0.0);
-glColor3f(4.3,3.5,1.0);
-glutSolidSphere(0.04,20,8);
-glPopMatrix();
+    glPushMatrix();
+    glTranslatef(-6.0,4.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(500.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(5.0,-4.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(-7.0,3.0,0.0);
+    gluLookAt(0.0,10.0,0.0,1.0,0.0,0.0,0.0,0.0,3.0);
+    glRotatef((GLfloat) b,0.0,0.0,0.0);
+    glScalef(200.0,0.0,0.0);
+    glColor3f(4.3,3.5,1.0);
+    glutSolidSphere(0.04,20,8);
+    glPopMatrix();
 
     if( g_img )
         glDisable( GL_TEXTURE_2D );
@@ -431,7 +431,8 @@ glPopMatrix();
 void reshapeFunc( GLsizei w, GLsizei h )
 {
     // save the new window size
-    g_width = w; g_height = h;
+    g_width = w;
+    g_height = h;
     // map the view port to the client area
     glViewport(0, 0, w, h);
     // set the matrix mode to project
@@ -464,14 +465,14 @@ void keyboardFunc( unsigned char key, int x, int y )
     case 'Q':
     case 'q':
         exit(1);
-    break;
+        break;
     case '-':
         g_angle_x -= 1.6f;
-    break;
+        break;
     case '+':
     case '=':
         g_angle_x += 1.6f;
-    break;
+        break;
     }
 }
 
@@ -544,41 +545,56 @@ bool ge_read_image( const char * filename, GeImageData * pImgData )
 
 
 void
-bwtorgba(unsigned char *b,unsigned char *l,int n) {
-    while(n--) {
+bwtorgba(unsigned char *b,unsigned char *l,int n)
+{
+    while(n--)
+    {
         l[0] = *b;
         l[1] = *b;
         l[2] = *b;
         l[3] = 0xff;
-        l += 4; b++;
+        l += 4;
+        b++;
     }
 }
 
 void
 rgbtorgba(unsigned char *r,unsigned char *g,unsigned char *b,
-          unsigned char *l,int n) {
-    while(n--) {
+          unsigned char *l,int n)
+{
+    while(n--)
+    {
         l[0] = r[0];
         l[1] = g[0];
         l[2] = b[0];
         l[3] = 0xff;
-        l += 4; r++; g++; b++;
+        l += 4;
+        r++;
+        g++;
+        b++;
     }
 }
 
 void
 rgbatorgba(unsigned char *r,unsigned char *g,unsigned char *b,
-           unsigned char *a,unsigned char *l,int n) {
-    while(n--) {
+           unsigned char *a,unsigned char *l,int n)
+{
+    while(n--)
+    {
         l[0] = r[0];
         l[1] = g[0];
         l[2] = b[0];
         l[3] = a[0];
-        l += 4; r++; g++; b++; a++;
+        l += 4;
+        r++;
+        g++;
+        b++;
+        a++;
     }
 }
 
-typedef struct _ImageRec {
+typedef struct _ImageRec
+{
     unsigned short imagic;
     unsigned short type;
     unsigned short dim;
@@ -595,12 +611,14 @@ typedef struct _ImageRec {
 } ImageRec;
 
 static void
-ConvertShort(unsigned short *array, unsigned int length) {
+ConvertShort(unsigned short *array, unsigned int length)
+{
     unsigned short b1, b2;
     unsigned char *ptr;
 
     ptr = (unsigned char *)array;
-    while (length--) {
+    while (length--)
+    {
         b1 = *ptr++;
         b2 = *ptr++;
         *array++ = (b1 << 8) | (b2);
@@ -608,12 +626,14 @@ ConvertShort(unsigned short *array, unsigned int length) {
 }
 
 static void
-ConvertUint(unsigned *array, unsigned int length) {
+ConvertUint(unsigned *array, unsigned int length)
+{
     unsigned int b1, b2, b3, b4;
     unsigned char *ptr;
 
     ptr = (unsigned char *)array;
-    while (length--) {
+    while (length--)
+    {
         b1 = *ptr++;
         b2 = *ptr++;
         b3 = *ptr++;
@@ -624,7 +644,8 @@ ConvertUint(unsigned *array, unsigned int length) {
 
 static ImageRec *ImageOpen(const char *fileName)
 {
-    union {
+    union
+    {
         int testWord;
         char testByte[4];
     } endianTest;
@@ -633,18 +654,23 @@ static ImageRec *ImageOpen(const char *fileName)
     int x;
 
     endianTest.testWord = 1;
-    if (endianTest.testByte[0] == 1) {
+    if (endianTest.testByte[0] == 1)
+    {
         swapFlag = 1;
-    } else {
+    }
+    else
+    {
         swapFlag = 0;
     }
 
     image = (ImageRec *)malloc(sizeof(ImageRec));
-    if (image == NULL) {
+    if (image == NULL)
+    {
         fprintf(stderr, "Out of memory!\n");
         exit(1);
     }
-    if ((image->file = fopen(fileName, "rb")) == NULL) {
+    if ((image->file = fopen(fileName, "rb")) == NULL)
+    {
         perror(fileName);
         //exit(1);
         return NULL;
@@ -652,7 +678,8 @@ static ImageRec *ImageOpen(const char *fileName)
 
     fread(image, 1, 12, image->file);
 
-    if (swapFlag) {
+    if (swapFlag)
+    {
         ConvertShort(&image->imagic, 6);
     }
 
@@ -661,16 +688,19 @@ static ImageRec *ImageOpen(const char *fileName)
     image->tmpG = (unsigned char *)malloc(image->xsize*256);
     image->tmpB = (unsigned char *)malloc(image->xsize*256);
     if (image->tmp == NULL || image->tmpR == NULL || image->tmpG == NULL ||
-        image->tmpB == NULL) {
+            image->tmpB == NULL)
+    {
         fprintf(stderr, "Out of memory!\n");
         exit(1);
     }
 
-    if ((image->type & 0xFF00) == 0x0100) {
+    if ((image->type & 0xFF00) == 0x0100)
+    {
         x = image->ysize * image->zsize * (int) sizeof(unsigned);
         image->rowStart = (unsigned *)malloc(x);
         image->rowSize = (int *)malloc(x);
-        if (image->rowStart == NULL || image->rowSize == NULL) {
+        if (image->rowStart == NULL || image->rowSize == NULL)
+        {
             fprintf(stderr, "Out of memory!\n");
             exit(1);
         }
@@ -678,7 +708,8 @@ static ImageRec *ImageOpen(const char *fileName)
         fseek(image->file, 512, SEEK_SET);
         fread(image->rowStart, 1, x, image->file);
         fread(image->rowSize, 1, x, image->file);
-        if (swapFlag) {
+        if (swapFlag)
+        {
             ConvertUint(image->rowStart, x/(int) sizeof(unsigned));
             ConvertUint((unsigned *)image->rowSize, x/(int) sizeof(int));
         }
@@ -687,7 +718,8 @@ static ImageRec *ImageOpen(const char *fileName)
 }
 
 static void
-ImageClose(ImageRec *image) {
+ImageClose(ImageRec *image)
+{
     fclose(image->file);
     free(image->tmp);
     free(image->tmpR);
@@ -697,11 +729,13 @@ ImageClose(ImageRec *image) {
 }
 
 static void
-ImageGetRow(ImageRec *image, unsigned char *buf, int y, int z) {
+ImageGetRow(ImageRec *image, unsigned char *buf, int y, int z)
+{
     unsigned char *iPtr, *oPtr, pixel;
     int count;
 
-    if ((image->type & 0xFF00) == 0x0100) {
+    if ((image->type & 0xFF00) == 0x0100)
+    {
         fseek(image->file, (long) image->rowStart[y+z*image->ysize],
               SEEK_SET);
         fread(image->tmp, 1, (unsigned int)image->rowSize[y+z*image->ysize],
@@ -709,24 +743,33 @@ ImageGetRow(ImageRec *image, unsigned char *buf, int y, int z) {
 
         iPtr = image->tmp;
         oPtr = buf;
-        for (;;) {
+        for (;;)
+        {
             pixel = *iPtr++;
             count = (int)(pixel & 0x7F);
-            if (!count) {
+            if (!count)
+            {
                 return;
             }
-            if (pixel & 0x80) {
-                while (count--) {
+            if (pixel & 0x80)
+            {
+                while (count--)
+                {
                     *oPtr++ = *iPtr++;
                 }
-            } else {
+            }
+            else
+            {
                 pixel = *iPtr++;
-                while (count--) {
+                while (count--)
+                {
                     *oPtr++ = pixel;
                 }
             }
         }
-    } else {
+    }
+    else
+    {
         fseek(image->file,
               512+(y*image->xsize)+(z*image->xsize*image->ysize),
               SEEK_SET);
@@ -735,7 +778,8 @@ ImageGetRow(ImageRec *image, unsigned char *buf, int y, int z) {
 }
 
 unsigned * ge_read_rgb( const char * name, int * width, int * height,
-                       int * components) {
+                        int * components)
+{
     unsigned *base, *lptr;
     unsigned char *rbuf, *gbuf, *bbuf, *abuf;
     ImageRec *image;
@@ -756,22 +800,28 @@ unsigned * ge_read_rgb( const char * name, int * width, int * height,
     if(!base || !rbuf || !gbuf || !bbuf)
         return NULL;
     lptr = base;
-    for(y=0; y<image->ysize; y++) {
-        if(image->zsize>=4) {
+    for(y=0; y<image->ysize; y++)
+    {
+        if(image->zsize>=4)
+        {
             ImageGetRow(image,rbuf,y,0);
             ImageGetRow(image,gbuf,y,1);
             ImageGetRow(image,bbuf,y,2);
             ImageGetRow(image,abuf,y,3);
             rgbatorgba(rbuf,gbuf,bbuf,abuf,
-              (unsigned char *)lptr,image->xsize);
+                       (unsigned char *)lptr,image->xsize);
             lptr += image->xsize;
-        } else if(image->zsize==3) {
+        }
+        else if(image->zsize==3)
+        {
             ImageGetRow(image,rbuf,y,0);
             ImageGetRow(image,gbuf,y,1);
             ImageGetRow(image,bbuf,y,2);
             rgbtorgba(rbuf,gbuf,bbuf,(unsigned char *)lptr,image->xsize);
             lptr += image->xsize;
-        } else {
+        }
+        else
+        {
             ImageGetRow(image,rbuf,y,0);
             bwtorgba(rbuf,(unsigned char *)lptr,image->xsize);
             lptr += image->xsize;
